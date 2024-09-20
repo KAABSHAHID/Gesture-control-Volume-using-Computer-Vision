@@ -11,7 +11,7 @@ This project allows users to control the system's volume through hand gestures, 
 1. Hand Tracking Module (`HandTrackingModule.py`):  
 This module detects the user's hand in a webcam feed and tracks specific landmarks (fingertips, joints) using Mediapipe’s hand detection model. It provides the coordinates of hand landmarks, which are used by the main script to perform volume adjustments.  
 
-2. Main Script (`VolumeControl.py`):  
+2. Main Script (`P1_volume.py`):  
 The main script calculates the distance between the tips of the thumb and index finger, mapping this distance to a volume range. As the distance between these two fingers increases or decreases, the system volume is raised or lowered. It also provides visual feedback through OpenCV, such as a real-time volume bar, FPS display, and hand tracking annotations.
 
 ## Requirements  
@@ -36,7 +36,7 @@ cd Gesture-control-Volume-using-Computer-Vision
 ```
 2. Ensure your webcam is working and run the main script to start gesture-controlled volume adjustment:
 ```bash
-python VolumeControl.py
+python P1_volume.py
 ```
 3. The system will start tracking your hand through the webcam. Adjust the distance between your thumb and index finger to change the system volume:  
 - Move your thumb and index finger closer to decrease the volume.  
@@ -53,7 +53,7 @@ This file contains the `handDetector` class that tracks the hand and finds speci
 - `findHands()`: Detects hands in the video feed and draws landmarks on the image.  
 - `findPosition()`: Finds the positions of landmarks on the hand and returns a list of coordinates for each.
 
-`VolumeControl.py`    
+`P1_volume.py`    
 This is the main script that integrates the hand tracking module and maps the distance between the thumb and index finger to control the system volume.  
 
 - `vol = np.interp(length, [20, 200], [minvol, maxvol])`: Maps the distance between fingertips to the system's volume range.  
