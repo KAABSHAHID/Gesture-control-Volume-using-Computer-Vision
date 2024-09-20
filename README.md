@@ -57,6 +57,9 @@ This file contains the `handDetector` class that tracks the hand and finds speci
 This is the main script that integrates the hand tracking module and maps the distance between the thumb and index finger to control the system volume.  
 
 - `vol = np.interp(length, [20, 200], [minvol, maxvol])`: Maps the distance between fingertips to the system's volume range.  
-- `volume.SetMasterVolumeLevel(vol, None)`: Sets the system's master volume based on the calculated distance.  
+- `volume.SetMasterVolumeLevel(vol, None)`: Sets the system's master volume based on the calculated distance.
+
+## Demo  
+![Volume Control Demo](./vol.gif)
 
 
